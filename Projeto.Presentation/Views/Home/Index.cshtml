@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+
+<h2>
+    <center>Sistema de Gerenciamento de Clientes</center>
+
+
+</h2>
+<hr />
+<div>
+    <center>
+
+        Gestão Operacional de Clientes.
+    </center>
+
+
+    <div id="content-wrapper">
+        <ul>
+
+            <a class="btn btn-secondary  href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw " ></i>
+                <span>
+                    Cliente
+                </span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="btn btn-lg"  href="/Cliente/Cadastro">
+                    Cadastrar Cliente
+                </a>
+                <a class="btn btn-lg" href="/Cliente/Consulta">
+                    Consultar Cliente
+                </a>
+            </div>
+
+        </ul>
+
+    </div>
+    <br />
+

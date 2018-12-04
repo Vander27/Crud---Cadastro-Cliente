@@ -1,0 +1,286 @@
+﻿
+@{
+    ViewBag.Pagina = "Consulta de Clientes";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts{
+    <script>
+
+        //criando o programa angular..
+        var appCliente = angular.module('appCliente', []);
+        //criando o controller..
+        appCliente.controller('consultaCliente',
+            function ($scope, $http) {
+
+                //criando uma função para executar a consulta no controller..
+                $scope.consultar = function () {
+
+                    //executando o método do controller..
+                    $http.get("/Cliente/ConsultarClientes")
+                        .then(function (obj) {
+                            //armazenando em variavel..
+                            $scope.clientes = obj.data;
+                        })
+                        .catch(function (e) {
+                            $scope.mensagem = e.data;
+                        });
+                };
+
+                //criando uma função para buscar 1  pelo id..
+                $scope.obter = function (id) {
+
+                    //executando o método do controller..
+                    $http.get("/Cliente/ObterCliente?idCliente=" + id)
+                        .then(function (obj) { //sucesso
+                            $scope.cliente = obj.data;
+                        })
+                        .catch(function (e) { //erro
+                            $scope.mensagem = e.data;
+                        });
+                };
+
+                //criando uma função para excluir 1  pelo id..
+                $scope.excluir = function () {
+
+                    //executando o método do controller..
+                    $http.get("/Cliente/ExcluirCliente?idCliente="
+                        + $scope.cliente.IdCliente)
+                        .then(function (obj) {
+                            //exibindo mensagem..
+                            $scope.mensagem = obj.data;
+
+                            //executando a consulta novamente..
+                            $scope.consultar();
+                        })
+                        .catch(function (e) {
+                            $scope.mensagem = e.data;
+                        });
+                };
+
+                //criando uma função para atualizar o Cliente..
+                $scope.atualizar = function () {
+
+                    $http.post("/Cliente/AtualizarCliente", $scope.cliente)
+                        .then(function (obj) {
+                            $scope.mensagem = obj.data;
+                            $scope.consultar();
+                        })
+                        .catch(function (e) {
+                            $scope.mensagem = e.data;
+                        });
+                };
+
+            });
+
+    </script>
+}
+
+
+
+
+    <div ng-app="appCliente" ng-controller="consultaCliente">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info" ng-show="mensagem">
+                            <strong>{{mensagem}}</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Pesquisar Clientes</label>
+                        <input type="text" class="form-control"
+                               ng-model="Pesquisa"
+                               placeholder="Digite aqui" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Ordenar por:</label>
+                        <select class="form-control" ng-model="Ordenacao">
+                            <option value="">Escolha uma Opção</option>
+                            <option value="IdCliente">Código</option>
+                            <option value="Nome">Nome</option>
+                            <option value="Endereco">Endereço</option>
+                            <option value="CEP">CEP</option>
+                            <option value="Bairro">Bairrro</option>
+                            <option value="Cidade">Cidade</option>
+                            <option value="UF">UF</option>
+                            <option value="Telefone">Telefone</option>
+                            <option value="Email">Email</option>
+
+
+                        </select>
+                    </div>
+                </div>
+
+                <br />
+
+                <table class="table table-bordered table-striped table-hover"
+                       ng-init="consultar()">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>CEP</th>
+                            <th>Bairro</th>
+                            <th>Cidade</th>
+                            <th>UF</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Operações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="c in clientes | filter : Pesquisa | orderBy : Ordenacao">
+                            <td>{{c.IdCliente}}</td>
+                            <td>{{c.Nome}}</td>
+                            <td>{{c.Endereco}}</td>
+                            <td>{{c.CEP}}</td>
+                            <td>{{c.Bairro}}</td>
+                            <td>{{c.Cidade}}</td>
+                            <td>{{c.UF}}</td>
+                            <td>{{c.Telefone}}</td>
+                            <td>{{c.Email}}</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm"
+                                        data-target="#janelaedicao"
+                                        data-toggle="modal"
+                                        ng-click="obter(c.IdCliente)">
+                                    Atualizar
+                                </button>
+
+                                <button class="btn btn-danger btn-sm"
+                                        data-target="#janelaexclusao"
+                                        data-toggle="modal"
+                                        ng-click="obter(c.IdCliente)">
+                                    Excluir
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="10">
+                                Quantidade de registros:
+                                {{(clientes | filter : Pesquisa ).length}}
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- JANELA DE EDIÇÃO -->
+                <div id="janelaedicao" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary">
+                                <h4 class="text-white">Atualizar Cliente</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <label>Código do Cliente:</label>
+                                <input type="text" class="form-control"
+                                       readonly="readonly"
+                                       ng-model="cliente.IdCliente" />
+                                <br />
+
+                                <label>Nome:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.Nome" />
+                                <br />
+
+                                <label>Endereço:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.Endereco" />
+                                <br />
+
+                                <label>CEP:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.CEP" />
+                                <br />
+
+                                <label>Bairro:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.Bairro" />
+                                <br />
+
+                                <label>Cidade:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.Cidade" />
+                                <br />
+
+                                <label>UF:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.UF" />
+                                <br />
+
+                                <label>Telefone:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.Telefone" />
+                                <br />
+
+                                <label>Email:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="cliente.Email" />
+                                <br />
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                                <button class="btn btn-primary"
+                                        ng-click="atualizar()"
+                                        data-dismiss="modal">
+                                    Atualizar Dados
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JANELA DE EXCLUSÃO -->
+                <div id="janelaexclusao" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-danger">
+                                <h4 class="text-white">Excluir Cliente</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <p>
+                                    Deseja realmente excluir este Cliente?
+                                </p>
+
+                                Código do Cliente: <strong>{{cliente.IdCliente}}</strong>
+                                <br />
+
+                                Nome: <strong>{{cliente.Nome}}</strong>
+                                <br />
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-warning"
+                                        data-dismiss="modal">
+                                    Cancelar
+                                </button>
+                                <button class="btn btn-danger"
+                                        ng-click="excluir()"
+                                        data-dismiss="modal">
+                                    Confirmar Exclusão
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>

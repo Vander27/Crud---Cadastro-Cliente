@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro de Cliente";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section Scripts{
+    <script>
+
+        //criando e dando um nome a um programa angular
+        var appCliente = angular.module('appCliente', []);
+        //criando um controller para realizar o cadastro do ..
+        appCliente.controller('cadastroCliente',
+            function ($scope, $http) {
+
+                //declarar uma variável para resgatar o valor 
+                //digitado no campo 'nome do '
+
+                $scope.model = {//Json
+                    Nome: '' //vazio..
+                };
+
+                //criando uma função que será executada
+                //quando o botão de cadastro for clicado..
+                $scope.cadastrar = function () {
+
+                    //imprimir mensagem..
+                    $scope.mensagem = "Processando, aguarde...";
+
+                    //requisição AJAX ao controller..
+                    $http.post('/Cliente/CadastrarCliente', $scope.model)
+                        .then(function (obj) {
+
+                            //imprimir mensagem de sucesso..
+                            $scope.mensagem = obj.data;
+                            //limpar o conteudo do campo..
+                            $scope.model.Nome = "";
+                            $scope.ErroNome = "";
+                            $scope.model.Endereco = "";
+                            $scope.ErroEndereco = "";
+                            $scope.model.CEP = "";
+                            $scope.ErroCEP = "";
+                            $scope.model.Bairro = "";
+                            $scope.ErroBairro = "";
+                            $scope.model.Cidade = "";
+                            $scope.ErroCidade = "";
+                            $scope.model.UF = "";
+                            $scope.ErroUF = "";
+                            $scope.model.Telefone = "";
+                            $scope.ErroTelefone = "";
+                            $scope.model.Email = "";
+                            $scope.ErroEmail = "";
+                        })
+                        .catch(function (e) {
+
+                            if (e.status == 400) { //BadRequest
+                                //armazenar o erro do campo nome..
+                                $scope.ErroNome = e.data.Nome;
+                                $scope.mensagem = "";
+                                $scope.ErroEndereco = e.data.Endereco;
+                                $scope.mensagem = "";
+                                $scope.ErroCEP = e.data.CEP;
+                                $scope.mensagem = "";
+                                $scope.ErroBairro = e.data.Bairro;
+                                $scope.mensagem = "";
+                                $scope.ErroCidade = e.data.Cidade;
+                                $scope.mensagem = "";
+                                $scope.ErroUF = e.data.UF;
+                                $scope.mensagem = "";
+                                $scope.ErroTelefone = e.data.Telefone;
+                                $scope.mensagem = "";
+                                $scope.ErroEmail = e.data.Email;
+                                $scope.mensagem = "";
+                                
+                            }
+                            else {
+                                //imprimir mensagem de erro..
+                                $scope.mensagem = "Erro: " + e.data;
+                            }
+
+                        });
+                };
+
+            });
+
+    </script>
+ 
+    }
+
+
+<h4>Formulário de Cadastro do Cliente</h4>
+<br />
+
+<div class="row" ng-app="appCliente" ng-controller="cadastroCliente">
+    <div class="col-md-4">
+
+        <label>Nome do Cliente:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.Nome" />
+        <div>
+            <strong class="text-danger">{{ErroNome}}</strong>
+        </div>
+        <br />
+
+
+        <label>Endereço:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.Endereco" />
+        <div>
+            <strong class="text-danger">{{ErroEndereco}}</strong>
+        </div>
+        <br />
+
+        <label>CEP:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.CEP" />
+        <div>
+            <strong class="text-danger">{{ErroCEP}}</strong>
+        </div>
+        <br />
+
+
+        <label>Bairro:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.Bairro" />
+        <div>
+            <strong class="text-danger">{{ErroBairro}}</strong>
+        </div>
+        <br />
+
+        <label>Cidade:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.Cidade" />
+        <div>
+            <strong class="text-danger">{{ErroCidade}}</strong>
+        </div>
+        <br />
+
+
+
+        <label>UF:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.UF" />
+        <div>
+            <strong class="text-danger">{{ErroUF}}</strong>
+        </div>
+        <br />
+
+
+        <label>Telefone:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.Telefone" />
+        <div>
+            <strong class="text-danger">{{ErroTelefone}}</strong>
+        </div>
+        <br />
+
+
+        <label>Email:</label>
+        <input type="text" class="form-control"
+               placeholder="Digite aqui"
+               ng-model="model.Email" />
+        <div>
+            <strong class="text-danger">{{ErroEmail}}</strong>
+        </div>
+        <br />
+
+
+        <button class="btn btn-success"
+                ng-click="cadastrar()">
+            Cadastrar Cliente
+        </button>
+        <br />
+        <br />
+
+        <strong>{{mensagem}}</strong>
+
+    </div>
+    
+</div>

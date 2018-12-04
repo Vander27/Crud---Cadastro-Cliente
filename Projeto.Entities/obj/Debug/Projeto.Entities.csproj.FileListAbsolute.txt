@@ -1,0 +1,42 @@
+C:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+C:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+C:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+C:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+C:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
+C:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+E:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+E:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+E:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+E:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+E:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+E:\PROJETO GIT\DIA\OUTUBRO\Aula13 a Aula 15\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
+E:\PROJETO GIT\SITE1\Sistema de Controle de Livros\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+E:\PROJETO GIT\SITE1\Sistema de Controle de Livros\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+E:\PROJETO GIT\SITE1\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+E:\PROJETO GIT\SITE1\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+E:\PROJETO GIT\SITE1\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+E:\PROJETO GIT\SITE1\Sistema de Controle de Livros\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
+E:\PROJETO GIT\SITE\Sistema-de-Controle-de-Veiculos\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+E:\PROJETO GIT\SITE\Sistema-de-Controle-de-Veiculos\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+E:\PROJETO GIT\SITE\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+E:\PROJETO GIT\SITE\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+E:\PROJETO GIT\SITE\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+E:\PROJETO GIT\SITE\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
+E:\TESTANDO\Sistema-de-Controle-de-Veiculos\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+E:\TESTANDO\Sistema-de-Controle-de-Veiculos\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+E:\TESTANDO\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+E:\TESTANDO\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+E:\TESTANDO\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+E:\TESTANDO\Sistema-de-Controle-de-Veiculos\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
+C:\Users\Vanderlei\Desktop\Teste\Sistema\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+C:\Users\Vanderlei\Desktop\Teste\Sistema\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+C:\Users\Vanderlei\Desktop\Teste\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+C:\Users\Vanderlei\Desktop\Teste\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Vanderlei\Desktop\Teste\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+C:\Users\Vanderlei\Desktop\Teste\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
+E:\PROJETO MES 11_2018\Projeto-com-Json - Angular\Sistema\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+E:\PROJETO MES 11_2018\Projeto-com-Json - Angular\Sistema\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+E:\PROJETO MES 11_2018\Projeto-com-Json - Angular\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.csprojAssemblyReference.cache
+E:\PROJETO MES 11_2018\Projeto-com-Json - Angular\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+E:\PROJETO MES 11_2018\Projeto-com-Json - Angular\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+E:\PROJETO MES 11_2018\Projeto-com-Json - Angular\Sistema\Projeto.Entities\obj\Debug\Projeto.Entities.pdb
